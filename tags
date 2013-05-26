@@ -3293,7 +3293,7 @@ bufpos	common/libc/printf/snprintf.c	/^	size_t bufpos;$/;"	m	struct:__anon17	fil
 buftest	user/testbin/badcall/common_buf.c	/^struct buftest {$/;"	s	file:
 buildconfig	kern/compile/ASST1/vers.c	/^const char buildconfig[] = "ASST1";$/;"	v
 buildconfig	kern/compile/ASST2/vers.c	/^const char buildconfig[] = "ASST2";$/;"	v
-buildversion	kern/compile/ASST1/vers.c	/^const int buildversion = 5;$/;"	v
+buildversion	kern/compile/ASST1/vers.c	/^const int buildversion = 22;$/;"	v
 buildversion	kern/compile/ASST2/vers.c	/^const int buildversion = 7;$/;"	v
 builtins	user/bin/sh/sh.c	/^} builtins[] = {$/;"	v	typeref:struct:__anon6	file:
 bus_map_area	kern/arch/sys161/include/bus.h	49;"	d
@@ -4642,7 +4642,7 @@ ru_utime	build/install/include/kern/resource.h	/^	struct timeval ru_utime;$/;"	m
 ru_utime	kern/include/kern/resource.h	/^	struct timeval ru_utime;$/;"	m	struct:rusage	typeref:struct:rusage::timeval
 run	user/testbin/dirconc/dirconc.c	/^run(void)$/;"	f	file:
 runit	user/testbin/badcall/driver.c	/^runit(int op)$/;"	f	file:
-runprogram	kern/syscall/runprogram.c	/^runprogram(char *progname)$/;"	f
+runprogram	kern/syscall/runprogram.c	/^runprogram(char *progname, int nargs, char **args)$/;"	f
 runtest	user/testbin/badcall/common_fds.c	/^runtest(int (*func)(int fd), void (*cleanup)(void), const char *callname)$/;"	f	file:
 runtest3	kern/test/tt3.c	/^runtest3(int nsleeps, int ncomputes)$/;"	f	file:
 runthreads	kern/test/threadtest.c	/^runthreads(int doloud)$/;"	f	file:

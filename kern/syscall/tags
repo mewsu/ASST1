@@ -1,0 +1,16 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+cons_vnode	file_syscalls.c	/^struct vnode *cons_vnode;$/;"	v	typeref:struct:vnode
+dumb_consoleIO_bootstrap	file_syscalls.c	/^void dumb_consoleIO_bootstrap() $/;"	f
+load_elf	loadelf.c	/^load_elf(struct vnode *v, vaddr_t *entrypoint)$/;"	f
+load_segment	loadelf.c	/^load_segment(struct vnode *v, off_t offset, vaddr_t vaddr, $/;"	f	file:
+mk_useruio	file_syscalls.c	/^mk_useruio(struct iovec *iov, struct uio *u, $/;"	f	file:
+runprogram	runprogram.c	/^runprogram(char *progname, int nargs, char **args)$/;"	f
+sys___time	time_syscalls.c	/^sys___time(userptr_t user_seconds_ptr, userptr_t user_nanoseconds_ptr)$/;"	f
+sys_fork	proc_syscalls.c	/^sys_fork(struct trapframe *tf, pid_t *retval)$/;"	f
+sys_read	file_syscalls.c	/^sys_read(int fd, userptr_t buf, size_t size, int *retval)$/;"	f
+sys_write	file_syscalls.c	/^sys_write(int fd, userptr_t buf, size_t size, int *retval)$/;"	f

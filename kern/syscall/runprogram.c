@@ -102,16 +102,34 @@ runprogram(char *progname, int nargs, char **args)
 	if (nargs > 1) {
 		for (count=0; count < nargs; count++) {
 			kprintf("args[%d] = %s\n", count, args[count]);
+			kprintf("length: %d\n", strlen(args[count]));
 		}
 	}
 
 
+
+	
+	int i;
+	userptr_t ptr = (userptr_t)stackptr; //start of userstack ie. 0x8000000
+	//char **kargv[sizeof(args)];
+	for (i=0; i < nargs; i++) {
+		copyoutstr(args[i], ptr, strlen(args[i]), NULL); //copy to userstack
+		//ptr -= strlen(args[i]);
+		kprintf("pointer at: %p\n", ptr);
+		//((char**)kargv)[i]  = (char *)ptr; //store the user stackpointer
+		((char**)args)[i]  = (char *)ptr; //change the args pointer to point at user space
+		ptr -= 4;
+	}
+
+	//copyout(kargv, ptr, sizeof(kargv));
+	//ptr -= sizeof(kargv);
+	copyout(args, ptr, sizeof(args));
+	ptr -= sizeof(args);
+
 	//need to copyout args to "user-level" address
-	userptr_t argv;
-	copyoutstr(args, argv, sizeof(args), sizeof(args));
 
 	/* Warp to user mode. */
-	enter_new_process(nargs /*argc*/, argv /*userspace addr of argv*/,
+	enter_new_process(nargs /*argc*/, ptr /*userspace addr of argv*/,
 			  stackptr, entrypoint);
 	
 	/* enter_new_process does not return. */

@@ -1643,7 +1643,7 @@ bswap32	lib/bswap.c	/^bswap32(uint32_t val)$/;"	f
 bswap64	lib/bswap.c	/^bswap64(uint64_t val)$/;"	f
 buildconfig	compile/ASST1/vers.c	/^const char buildconfig[] = "ASST1";$/;"	v
 buildconfig	compile/ASST2/vers.c	/^const char buildconfig[] = "ASST2";$/;"	v
-buildversion	compile/ASST1/vers.c	/^const int buildversion = 5;$/;"	v
+buildversion	compile/ASST1/vers.c	/^const int buildversion = 22;$/;"	v
 buildversion	compile/ASST2/vers.c	/^const int buildversion = 7;$/;"	v
 bus_map_area	arch/sys161/include/bus.h	49;"	d
 bus_map_area	compile/ASST1/includelinks/platform/bus.h	49;"	d
@@ -2399,7 +2399,7 @@ ru_nvcsw	include/kern/resource.h	/^	__counter_t ru_nvcsw;		\/* voluntary context
 ru_oublock	include/kern/resource.h	/^	__counter_t ru_oublock;		\/* file blocks written (count) *\/$/;"	m	struct:rusage
 ru_stime	include/kern/resource.h	/^	struct timeval ru_stime;$/;"	m	struct:rusage	typeref:struct:rusage::timeval
 ru_utime	include/kern/resource.h	/^	struct timeval ru_utime;$/;"	m	struct:rusage	typeref:struct:rusage::timeval
-runprogram	syscall/runprogram.c	/^runprogram(char *progname)$/;"	f
+runprogram	syscall/runprogram.c	/^runprogram(char *progname, int nargs, char **args)$/;"	f
 runtest3	test/tt3.c	/^runtest3(int nsleeps, int ncomputes)$/;"	f	file:
 runthreads	test/threadtest.c	/^runthreads(int doloud)$/;"	f	file:
 rusage	include/kern/resource.h	/^struct rusage {$/;"	s
